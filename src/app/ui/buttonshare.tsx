@@ -1,3 +1,5 @@
+'use clent'
+
 import { cn } from "../lib/utils";
 
 const handleClick = async () => {

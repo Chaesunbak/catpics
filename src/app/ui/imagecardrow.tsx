@@ -74,7 +74,7 @@ export default function ImageCardRow({index}:{index:number}) {
             {!initialLoading && data.map((cat, index) => (
                 <ImageCard key={index} cat={cat} />
             ))}
-            {additionalLoading && <ImageCardSkeleton imgWidth={300} imgHeight={300}/> }
+            {additionalLoading && (<><ImageCardSkeleton imgWidth={300} imgHeight={300}/><ImageCardSkeleton imgWidth={300} imgHeight={300}/></>) }
         <div ref={observerRef}/>
         </div>
     )

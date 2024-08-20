@@ -1,3 +1,5 @@
+'use client';
+
 export function ImageCardSkeleton({ imgHeight, imgWidth }: { imgHeight: number; imgWidth: number }): JSX.Element {
     return (
         <div className=' bg-white rounded-xl p-2 shadow-lg shadow-accent mb-2 md:mb-3 lg:mb-4 xl:mb-5 overflow-hidden'>
