@@ -19,7 +19,6 @@ export default function ImageCardRow({index}:{index:number}) {
         try {
           setInitialLoading(true);
           const res = await axios.get(API_URL, { headers: { 'x-api-key' : process.env.NEXT_PUBLIC_X_API_KEY } });
-          console.log(res.data);
           setData((prevData) => [...prevData, ...res.data]);
         } catch (e) {
           console.log(e);
@@ -35,7 +34,6 @@ export default function ImageCardRow({index}:{index:number}) {
         try {
           setAdditionalLoading(true);
           const res = await axios.get(API_URL, { headers: { 'x-api-key' : process.env.NEXT_PUBLIC_X_API_KEY } });
-          console.log(res.data);
           setData((prevData) => [...prevData, ...res.data]);
         } catch (e) {
           console.log(e);

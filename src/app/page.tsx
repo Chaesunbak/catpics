@@ -3,6 +3,7 @@
 import ImageCardRow from './ui/imagecardrow';
 import { useMediaQuery } from 'react-responsive'
 import ButtonScollToTop from './ui/buttonscolltotop';
+import ButtonShare from './ui/buttonshare';
 
 export default function Home() {
   const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
@@ -23,6 +24,7 @@ export default function Home() {
       </main>
       <footer>
         <nav id="footer-nav">
+          <ButtonShare className='fixed bottom-20 right-5 px-3 py-2 bg-primary  text-white text-3xl z-50 border border-white' />
           <ButtonScollToTop className='fixed bottom-5 right-5 px-3 py-2 bg-primary  text-white text-3xl z-50 border border-white' />
         </nav>
       </footer>
