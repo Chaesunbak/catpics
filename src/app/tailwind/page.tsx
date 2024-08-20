@@ -1,13 +1,12 @@
 'use client';
 
 import axios, {isCancel, AxiosError} from 'axios';
-import { useState, useEffect, useRef, Suspense } from 'react';
-import ImageCard from './ui/imagecard.tsx';
-import { type Cat, type Breed, type Category } from '../lib/definitions.ts';
-import ImageCardSkeleton from './ui/imagecarkskeleton.tsx';
+import { useState, useEffect, useRef } from 'react';
+import ImageCard from '../ui/imagecard.tsx';
+import { type Cat, type Breed, type Category } from '../lib/definitions.js';
 
 
-export default function Home() {
+export default function Page() {
   const [data, setData] = useState<Cat[]>([]);
   const [page, setPage] = useState<number>(0);
   const [loading, setLoading] = useState<boolean>(false);
@@ -57,47 +56,16 @@ export default function Home() {
   }, []);
 
 
-  const dataCol1 = data.filter((_, index) => index % 4 === 0);
-  const dataCol2 = data.filter((_, index) => index % 4 === 1);
-  const dataCol3 = data.filter((_, index) => index % 4 === 2);
-  const dataCol4 = data.filter((_, index) => index % 4 === 3);
-
   return (
     <>
       <header>
         <a href='/'><h1 className="font-sans text-5xl text-center text-white drop-shadow-2xl">Many Cat Pics.com</h1></a>
       </header>
       <main
-        className="grid grid-cols-2 lg:grid-cols-4 min-h-screen items-start justify-center p-2 md:p-3 lg:p-4 xl:p-5 gap-2 md:gap-3 lg:gap-4 xl:gap-5"
+        className="min-h-screen items-start justify-center p-2 md:p-3 lg:p-4 xl:p-5 gap-2 md:gap-3 lg:gap-4 xl:gap-5"
+        style={{display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gridTemplateRows: 'masonry'}}
       >
-        <div className="grid gap-4">
-          {dataCol1 && dataCol1.map((cat, index) => (
-            <Suspense fallback={<ImageCardSkeleton />} key={index}>
-              <ImageCard cat={cat} />
-            </Suspense>
-          ))}
-        </div>
-        <div className="grid gap-4">
-          {dataCol2 && dataCol2.map((cat, index) => (
-            <Suspense fallback={<ImageCardSkeleton />} key={index}>
-              <ImageCard cat={cat} />
-            </Suspense>
-          ))}
-        </div>
-        <div className="grid gap-4">
-          {dataCol3 && dataCol3.map((cat, index) => (
-            <Suspense fallback={<ImageCardSkeleton />} key={index}>
-              <ImageCard cat={cat} />
-            </Suspense>
-          ))}
-        </div>
-        <div className="grid gap-4">
-          {dataCol4 && dataCol4.map((cat, index) => (
-            <Suspense fallback={<ImageCardSkeleton />} key={index}>
-              <ImageCard cat={cat} />
-            </Suspense>
-          ))}
-        </div>
+        {data && data.map((cat: Cat, index: number) => ( <ImageCard key={index} cat={cat} /> ))}
       </main>
       <footer className='flex'>
         {loading && <p>Loading...</p>}
