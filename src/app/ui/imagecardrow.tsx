@@ -5,8 +5,6 @@ import { useState, useEffect, useRef } from "react";
 import { Cat } from "../lib/definitions";
 import axios, { isCancel } from "axios";
 import { ImageCardSkeleton, ImageCardRowSkeleton1, ImageCardRowSkeleton2 } from "./skeletons";
-import { cn } from "../lib/utils";
-
 export default function ImageCardRow({index}:{index:number}) {
 
     const [data, setData] = useState<Cat[]>([]);

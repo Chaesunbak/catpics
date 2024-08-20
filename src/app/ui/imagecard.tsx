@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export default function ImageCard({ cat }: { cat: Cat }) {
     return (
-        <div className=' bg-white rounded-xl p-2 shadow-lg shadow-accent mb-2 md:mb-3 lg:mb-4 xl:mb-5 overflow-hidden'>
+        <div className=' bg-white rounded-xl p-2 shadow-lg shadow-accent mb-2 md:mb-3 lg:mb-4 xl:mb-5 overflow-hidden transition-transform'>
             <div className='flex justify-center overflow-hidden mb-1 min-w-11'>
                 <Image className="rounded-lg hover:scale-110 hover:rounded-none transition-all duration-300 " src={cat.url} width={cat.width} height={cat.height} alt="cat pic" />
             </div>
