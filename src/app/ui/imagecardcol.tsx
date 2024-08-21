@@ -4,8 +4,9 @@ import ImageCard from "./imagecard"
 import { useState, useEffect, useRef } from "react";
 import { Cat } from "../lib/definitions";
 import axios, { isCancel } from "axios";
-import { ImageCardSkeleton, ImageCardRowSkeleton1, ImageCardRowSkeleton2 } from "./skeletons";
-export default function ImageCardRow({index}:{index:number}) {
+import { ImageCardSkeleton, ImageCardColSkeleton1, ImageCardColSkeleton2 } from "./skeletons";
+
+export default function ImageCardCol({index}:{index:number}) {
 
     const [data, setData] = useState<Cat[]>([]);
     const observerRef = useRef<HTMLDivElement | null>(null);
@@ -70,7 +71,7 @@ export default function ImageCardRow({index}:{index:number}) {
 
     return (
         <div className="flex flex-col">
-            {initialLoading && (index % 2 === 0 ? <ImageCardRowSkeleton1 /> : <ImageCardRowSkeleton2 />)}
+            {initialLoading && (index % 2 === 0 ? <ImageCardColSkeleton1 /> : <ImageCardColSkeleton2 />)}
             {!initialLoading && data.map((cat, index) => (
                 <ImageCard key={index} cat={cat} />
             ))}

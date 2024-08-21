@@ -19,7 +19,7 @@ export function ImageCardSkeleton({ imgHeight, imgWidth }: { imgHeight: number; 
     )
 }
 
-export function ImageCardRowSkeleton1() : JSX.Element{
+export function ImageCardColSkeleton1() : JSX.Element{
     return (
         <div className="flwx">
             <ImageCardSkeleton imgHeight={200} imgWidth={300} />
@@ -30,7 +30,7 @@ export function ImageCardRowSkeleton1() : JSX.Element{
     )
 }
 
-export function ImageCardRowSkeleton2() : JSX.Element{
+export function ImageCardColSkeleton2() : JSX.Element{
     return (
         <div className="flwx">
             <ImageCardSkeleton imgHeight={600} imgWidth={300} />

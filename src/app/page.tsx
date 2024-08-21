@@ -1,6 +1,6 @@
 'use client';
 
-import ImageCardRow from './ui/imagecardrow';
+import ImageCardCol from './ui/imagecardcol';
 import { useMediaQuery } from 'react-responsive'
 import ButtonScollToTop from './ui/buttonscolltotop';
 import ButtonShare from './ui/buttonshare';
@@ -16,10 +16,10 @@ export default function Home() {
       <main
         className="grid grid-cols-2 lg:grid-cols-4 min-h-screen items-start justify-center p-2 md:p-3 lg:p-4 xl:p-5 gap-2 md:gap-3 lg:gap-4 xl:gap-5"
       >
-        <ImageCardRow index={0}/>
-        <ImageCardRow index={1}/>
-        {!isTabletOrMobile && <ImageCardRow index={3}/>}
-        {!isTabletOrMobile && <ImageCardRow index={4}/>}
+        <ImageCardCol index={0}/>
+        <ImageCardCol index={1}/>
+        {!isTabletOrMobile && <ImageCardCol index={3}/>}
+        {!isTabletOrMobile && <ImageCardCol index={4}/>}
       </main>
       <footer>
         <nav id="footer-nav">
