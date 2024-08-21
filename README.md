@@ -2,7 +2,7 @@
 
 ### ManyCatPic.com
 
-랜덤한 고양이 사진을 많이 볼 수 있어요. 많이.
+랜덤한 고양이 사진을 많이 볼 수 있습니다. 굉장히 많이.
 
 https://endearing-capybara-e08053.netlify.app
 
